@@ -1,0 +1,25 @@
+server:
+  port: 7001
+
+eureka:
+  instance:
+    hostname: localhost  #eureka服务端的实例名称
+  client:
+    register-with-eureka: false #false表示不向注册中心注册自己。
+    fetch-registry: false #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    service-url:
+      defaultZone: http://admin:123456@localhost:7002/eureka/
+        #true 表示自己是一个注册的服务，需要在注册中心搜索服务名
+
+spring:
+  application:
+    name: MALL-EUREKA
+  security:
+    user:
+      name: admin
+      password: 123456
+
+
+
+
+
