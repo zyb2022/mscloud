@@ -18,6 +18,7 @@ public class MyLogGateWayFilter implements GlobalFilter, Ordered {
 
         String uname = exchange.getRequest().getQueryParams().getFirst("uname");
         if (uname == null) {
+            System.out.println("push");
             System.out.println("****用户名为null，无法登录");
             exchange.getResponse().setStatusCode(HttpStatus.NOT_ACCEPTABLE);
             return exchange.getResponse().setComplete();
